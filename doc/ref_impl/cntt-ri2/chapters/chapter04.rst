@@ -178,18 +178,14 @@ follows:
 Installation on Preprovisioned Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infrastructure`.
-
 
 Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
 
 When modifying the environmental variables defined in ``deploy.env``,
 set deployment type:
 
-
 ``DEPLOYMENT=k8s``
-
 
 The user name of jump server, clusters and jump VM should be the same for conformance,
 and you might need to set jump VM details:
