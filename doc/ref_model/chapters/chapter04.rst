@@ -130,6 +130,8 @@ Exposed Performance Optimisation Capabilities
 |e.cap.024| CPU allocation      |Yes/No| N:1: Number of virtual cores per physical core; also known as CPU overbooking |
 |         | ratio               |      | ratio                                                                         |
 +---------+---------------------+------+-------------------------------------------------------------------------------+
+|e.cap.025| AF_XDP              |Yes/No| Indicates if Cloud Infrastructure supports AF_XDP                             |
++---------+---------------------+------+-------------------------------------------------------------------------------+
 
 **Table 4-2:** Exposed Performance Optimisation Capabilities of Cloud Infrastructure
 
@@ -270,16 +272,16 @@ or events should be collected and monitored by monitoring tools.
 |         | Capability          |           |                                                                          |
 +=========+=====================+===========+==========================================================================+
 |i.pm.001 | Host CPU usage      |nanoseconds| Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1                  |
-|         |                     |           | :cite:p:`etsigsnfvtst008` clause 6, processor usage metric (Cloud        |
-|         |                     |           | Infrastructure internal).                                                |
+|         |                     |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud Infrastructure   |
+|         |                     |           | internal).                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.002 | Virtual compute     |nanoseconds| Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1                     |
 |         | resource (vCPU)     |           | :cite:p:`etsigsnfvifa027` Mean vCPU usage and Peak vCPU usage (Cloud     |
 |         | usage               |           | Infrastructure external).                                                |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.003 | Host CPU            | %         | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1                  |
-|         | utilisation         |           | :cite:p:`etsigsnfvtst008` clause 6, processor usage metric (Cloud        |
-|         |                     |           | Infrastructure internal).                                                |
+|         | utilisation         |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud Infrastructure   |
+|         |                     |           | internal).                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.004 | Virtual compute     | %         | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1                     |
 |         | resource (vCPU)     |           | :cite:p:`etsigsnfvifa027` Mean vCPU usage and Peak vCPU usage (Cloud     |
@@ -375,6 +377,16 @@ or events should be collected and monitored by monitoring tools.
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.032 | Disk energy         | Watt.hour | Electrical energy consumption of a specific storage device of a node     |
 |         | consumption         | (Joule)   | since the related counter last reset (2)                                 |
++---------+---------------------+-----------+--------------------------------------------------------------------------+
+|i.pm.033 | Hugepages pool      | Integer   | the number of Hugepages currently configured in the pool, which is the   |
+|         | total               |           | total of pages available, as defined in ETSI GS NFV-TST 008 V3.5.1       |
+|         |                     |           | :cite:p:`etsigsnfvtst008`                                                |
++---------+---------------------+-----------+--------------------------------------------------------------------------+
+|i.pm.034 | Hugepages used      | Integer   | the number of used pages in the Hugepage Pool, as defined in ETSI GS     |
+|         |                     |           | NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                             |
++---------+---------------------+-----------+--------------------------------------------------------------------------+
+|i.pm.035 | Hugepages free      | Integer   | the number of free pages in the Hugepage Pool, as defined in ETSI GS     |
+|         |                     |           | NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                             |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 
 **Table 4-8:** Internal Measurement Capabilities of Cloud Infrastructure
@@ -682,6 +694,9 @@ Profiles Specifications & Capability Mapping
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |e.cap.023| Huge page support                       | No        | Yes         | Internal performance capabilities as   |
 |         | per Table 4-7.                          |           |             | per Table 4-7.                         |
++---------+-----------------------------------------+-----------+-------------+----------------------------------------+
+|e.cap.025| AF_XDP                                  | No        | Optional    | These Capabilities require workload    |
+|         |                                         |           |             | support for AF_XDP socket type.        |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |i.cap.019| CPU Clock Speed                         | <value>   | <value>     | Specifies the Cloud Infrastructure CPU |
 |         |                                         |           |             | Clock Speed (in GHz).                  |

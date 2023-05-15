@@ -39,8 +39,8 @@ virtual and bare-metal hosts. It performs this automated deployment by using Ans
 <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses
 scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
 
-Installation on Bare Metal Infratructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation on Bare Metal Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed.
 Details and installation steps can be found in ``docs/release/installation/deployment-guide.rst``.
@@ -178,14 +178,18 @@ follows:
 Installation on Preprovisioned Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`.
+
+The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infrastructure`.
+
 
 Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
 
 When modifying the environmental variables defined in ``deploy.env``,
 set deployment type:
 
-``DEPLOYMENT=-k8s``
+
+``DEPLOYMENT=k8s``
+
 
 The user name of jump server, clusters and jump VM should be the same for conformance,
 and you might need to set jump VM details:
@@ -193,7 +197,7 @@ and you might need to set jump VM details:
 ``USERNAME=<jumpserver-username>``
 ``PROJECT_ROOT=<user-home-direction>``
 
-``<user-home-direction>`` is the home direction of jump VM, which is also the same as jump server.
+``<user-home-direction>`` is the home directory of jump VM, which is also the same as jump server.
 
 Once ready, issue the following command to initiate the deployment:
 
